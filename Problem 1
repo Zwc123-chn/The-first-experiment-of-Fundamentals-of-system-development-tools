@@ -67,5 +67,44 @@ drwxr-x--- 2 zwc zwc 4096  8月 26 11:24 .
 drwxr-x--- 4 zwc zwc 4096  8月 26 11:24 ..
 -rw-r----- 1 zwc zwc    0  8月 26 11:01 empty.txt
 zwc@ZwcLinux:~/q01$ ^C
+zwc@ZwcLinux:~/q01$ rm -rf work
+zwc@ZwcLinux:~/q01$ mkdir -p "work/$STUDENT_ID"
+zwc@ZwcLinux:~/q01$ cd input
+zwc@ZwcLinux:~/q01/input$ find . -type f -name "*.txt" -print | cpio -pdm "../work/$STUDENT_ID"
+1 block
+zwc@ZwcLinux:~/q01/input$ cd ..
+zwc@ZwcLinux:~/q01$ find "work/$STUDENT_ID" -type d -exec chmod 750 {} \;
+zwc@ZwcLinux:~/q01$ find "work/$STUDENT_ID" -type f -exec chmod 640 {} \;
+zwc@ZwcLinux:~/q01$ find "work/$STUDENT_ID" -type f -printf "%P %s\n" > inventory.txt
+zwc@ZwcLinux:~/q01$ ls -laR work
+work:
+total 12
+drwxrwxr-x 3 zwc zwc 4096  8月 26 12:43 .
+drwxrwxr-x 4 zwc zwc 4096  8月 26 12:43 ..
+drwxr-x--- 4 zwc zwc 4096  8月 26 12:43 25030021128
+
+work/25030021128:
+total 16
+drwxr-x--- 4 zwc zwc 4096  8月 26 12:43 .
+drwxrwxr-x 3 zwc zwc 4096  8月 26 12:43 ..
+drwxr-x--- 2 zwc zwc 4096  8月 26 12:43 docs
+drwxr-x--- 2 zwc zwc 4096  8月 26 12:43 tmp
+
+work/25030021128/docs:
+total 16
+drwxr-x--- 2 zwc zwc 4096  8月 26 12:43  .
+drwxr-x--- 4 zwc zwc 4096  8月 26 12:43  ..
+-rw-r----- 1 zwc zwc   12  8月 26 11:00 'notes one.txt'
+-rw-r----- 1 zwc zwc    7  8月 26 11:00  .secret.txt
+
+work/25030021128/tmp:
+total 8
+drwxr-x--- 2 zwc zwc 4096  8月 26 12:43 .
+drwxr-x--- 4 zwc zwc 4096  8月 26 12:43 ..
+-rw-r----- 1 zwc zwc    0  8月 26 11:01 empty.txt
+zwc@ZwcLinux:~/q01$ cat inventory.txt
+docs/.secret.txt 7
+docs/notes one.txt 12
+tmp/empty.txt 0
 zwc@ZwcLinux:~/q01$ 
 

@@ -45,3 +45,94 @@ zwc@ZwcLinux:~/q03$ sudo apt install git
 正在设置 git-man (1:2.34.1-1ubuntu1.17) ...
 正在设置 git (1:2.34.1-1ubuntu1.17) ...
 正在处理用于 man-db (2.10.2-1) 的触发器 ...
+zwc@ZwcLinux:~/q03$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/zwc/q03/.git/
+zwc@ZwcLinux:~/q03$ git branch -m master main
+zwc@ZwcLinux:~/q03$ git config --global init.defaultBranch main
+zwc@ZwcLinux:~/q03$ echo 'mode=normal' > config.txt
+zwc@ZwcLinux:~/q03$ git add config.txt
+zwc@ZwcLinux:~/q03$ git commit -m "init: mode=normal"
+[main (root-commit) a896668] init: mode=normal
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 config.txt
+zwc@ZwcLinux:~/q03$ git checkout -b feature-a
+Switched to a new branch 'feature-a'
+zwc@ZwcLinux:~/q03$ echo "mode=safe" > config.txt
+zwc@ZwcLinux:~/q03$ git add config.txt
+zwc@ZwcLinux:~/q03$ git commit -m "feature-a: set mode=safe"
+[feature-a 1990b46] feature-a: set mode=safe
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+zwc@ZwcLinux:~/q03$ git checkout main
+Switched to branch 'main'
+zwc@ZwcLinux:~/q03$ git checkout -b feature-b
+Switched to a new branch 'feature-b'
+zwc@ZwcLinux:~/q03$ echo "mode=fast" > config.txt
+zwc@ZwcLinux:~/q03$ git commit -m "feature-b: set mode=fast"
+On branch feature-b
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   config.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+zwc@ZwcLinux:~/q03$ git add config.txt
+zwc@ZwcLinux:~/q03$ git commit -m "feature-b: set mode=fast"
+[feature-b a1eaea4] feature-b: set mode=fast
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+zwc@ZwcLinux:~/q03$ git checkout main
+Switched to branch 'main'
+zwc@ZwcLinux:~/q03$ git merge feature-a
+Updating a896668..1990b46
+Fast-forward
+ config.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+zwc@ZwcLinux:~/q03$ git merge feature-b
+Auto-merging config.txt
+CONFLICT (content): Merge conflict in config.txt
+Automatic merge failed; fix conflicts and then commit the result.

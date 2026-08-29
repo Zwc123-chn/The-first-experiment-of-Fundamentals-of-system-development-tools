@@ -137,4 +137,116 @@ As shown in Table ~\ref{tab:data} , the two sets of values differ significantly;
 \end{document}
 -----------------------------------------------------------------------------------------------------
 
+zwc@ZwcLinux:~$ latexmk -pdf -halt-on-error q04/report.tex
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'q04/report.tex'
+      'report.aux'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -halt-on-error -recorder  "q04/report.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./q04/report.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./report.aux)
+
+LaTeX Warning: Reference `eq:quadratic' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Reference `tab:data' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:data' on page 1 undefined on input line 31.
+
+
+LaTeX Warning: Reference `eq:quadratic' on page 1 undefined on input line 31.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb>
+Output written on report.pdf (1 page, 85025 bytes).
+Transcript written on report.log.
+Latexmk: Examining 'report.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: References changed.
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: List of undefined refs and citations:
+  Reference `eq:quadratic' on page 1 undefined on input line 31
+  Reference `eq:quadratic' on page 1 undefined on input line 9
+  Reference `tab:data' on page 1 undefined on input line 15
+  Reference `tab:data' on page 1 undefined on input line 31
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'report.aux'
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -halt-on-error -recorder  "q04/report.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./q04/report.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./report.aux) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./report.aux) )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on report.pdf (1 page, 75318 bytes).
+Transcript written on report.log.
+Latexmk: Examining 'report.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Log file says output to 'report.pdf'
+Latexmk: All targets (report.pdf) are up-to-date
+zwc@ZwcLinux:~$ 
+
 

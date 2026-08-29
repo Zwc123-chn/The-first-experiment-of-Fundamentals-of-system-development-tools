@@ -1,0 +1,13 @@
+zwc@ZwcLinux:~$ mkdir -p q04
+zwc@ZwcLinux:~$ cat > q04/report.tex << 'EOF'
+> \documentclass{article}
+> \usepackage{amsmath}
+> \begin{document}
+> \title{Tool Report}
+> \author{姓名—学号}
+> \maketitle
+> \section{Result}
+> % 在此加入公式、表格及正文引用
+> \end{document}
+> EOF
+zwc@ZwcLinux:~$ nano q04/report.tex

@@ -136,3 +136,38 @@ zwc@ZwcLinux:~/q03$ git merge feature-b
 Auto-merging config.txt
 CONFLICT (content): Merge conflict in config.txt
 Automatic merge failed; fix conflicts and then commit the result.
+zwc@ZwcLinux:~/q03$ cat config.txt
+<<<<<<< HEAD
+mode=safe
+=======
+mode=fast
+>>>>>>> feature-b
+zwc@ZwcLinux:~/q03$ cat > config.txt <<EOF
+> mode=safe
+> note=reviewed
+> EOF
+zwc@ZwcLinux:~/q03$ git add config.txt
+zwc@ZwcLinux:~/q03$ git commit -m "merge feature-b, resolve conflict: keep safe + add note"
+[main 60b5e29] merge feature-b, resolve conflict: keep safe + add note
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+zwc@ZwcLinux:~/q03$ git status
+On branch main
+nothing to commit, working tree clean
+zwc@ZwcLinux:~/q03$ git log --all --graph --decorate --oneline
+*   60b5e29 (HEAD -> main) merge feature-b, resolve conflict: keep safe + add note
+|\  
+| * a1eaea4 (feature-b) feature-b: set mode=fast
+* | 1990b46 (feature-a) feature-a: set mode=safe
+|/  
+* a896668 init: mode=normal

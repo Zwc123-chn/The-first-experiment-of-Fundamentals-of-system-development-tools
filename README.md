@@ -99,4 +99,3 @@ timestamp,user,path,status,latency_ms
 - 使用 `latexmk -pdf -halt-on-error` 或 `tectonic` 生成 `report.pdf`。
 - 确认 PDF 能打开，且交叉引用不显示 `??`。
 
-如果你需要，我还可以顺带把**4 道题完整可运行的参考答案脚本**一并给你。

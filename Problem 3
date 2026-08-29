@@ -1,0 +1,47 @@
+zwc@ZwcLinux:~$ mkdir q03
+zwc@ZwcLinux:~$ q03
+q03: command not found
+zwc@ZwcLinux:~$ cd q03
+zwc@ZwcLinux:~/q03$ git init
+Command 'git' not found, but can be installed with:
+sudo apt install git
+zwc@ZwcLinux:~/q03$ sudo apt install git
+[sudo] password for zwc: 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树... 完成
+正在读取状态信息... 完成                 
+下列软件包是自动安装的并且现在不需要了：
+  asymptote asymptote-doc cm-super cm-super-minimal context context-modules feynmf fonts-adf-accanthis fonts-adf-berenis fonts-adf-gillius fonts-adf-universalis fonts-cabin fonts-cantarell
+  fonts-comfortaa fonts-dejavu-extra fonts-ebgaramond fonts-ebgaramond-extra fonts-font-awesome fonts-gfs-artemisia fonts-gfs-baskerville fonts-gfs-bodoni-classic fonts-gfs-complutum
+  fonts-gfs-didot fonts-gfs-didot-classic fonts-gfs-gazis fonts-gfs-neohellenic fonts-gfs-olga fonts-gfs-porson fonts-gfs-solomos fonts-gfs-theokritos fonts-go fonts-hosny-amiri fonts-junicode
+  fonts-linuxlibertine fonts-lobster fonts-lobstertwo fonts-noto-core fonts-oflb-asana-math fonts-open-sans fonts-roboto-unhinted fonts-sil-charis fonts-sil-gentium fonts-sil-gentium-basic
+  fonts-sil-gentiumplus fonts-sil-gentiumplus-compact freeglut3 libglew2.2 libgsl27 libgslcblas0 libsigsegv2 pfb2t1c2pfb texlive-metapost
+使用'sudo apt autoremove'来卸载它(它们)。
+将会同时安装下列软件：
+  git-man liberror-perl
+建议安装：
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+下列【新】软件包将被安装：
+  git git-man liberror-perl
+升级了 0 个软件包，新安装了 3 个软件包，要卸载 0 个软件包，有 84 个软件包未被升级。
+需要下载 4,154 kB 的归档。
+解压缩后会消耗 21.0 MB 的额外空间。
+您希望继续执行吗？ [Y/n] Y
+获取:1 http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy/main amd64 liberror-perl all 0.17029-1 [26.5 kB]
+获取:2 http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy-updates/main amd64 git-man all 1:2.34.1-1ubuntu1.17 [954 kB]
+获取:3 http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.17 [3,174 kB]
+已下载 4,154 kB，耗时 1秒 (3,993 kB/s)
+正在选中未选择的软件包 liberror-perl。
+(正在读取数据库 ... 系统当前共安装有 290754 个文件和目录。)
+准备解压 .../liberror-perl_0.17029-1_all.deb  ...
+正在解压 liberror-perl (0.17029-1) ...
+正在选中未选择的软件包 git-man。
+准备解压 .../git-man_1%3a2.34.1-1ubuntu1.17_all.deb  ...
+正在解压 git-man (1:2.34.1-1ubuntu1.17) ...
+正在选中未选择的软件包 git。
+准备解压 .../git_1%3a2.34.1-1ubuntu1.17_amd64.deb  ...
+正在解压 git (1:2.34.1-1ubuntu1.17) ...
+正在设置 liberror-perl (0.17029-1) ...
+正在设置 git-man (1:2.34.1-1ubuntu1.17) ...
+正在设置 git (1:2.34.1-1ubuntu1.17) ...
+正在处理用于 man-db (2.10.2-1) 的触发器 ...

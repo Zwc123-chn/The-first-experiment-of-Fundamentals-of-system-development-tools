@@ -23,3 +23,17 @@ echo "===== 5xx请求最多的前2个path ====="
 tail -n +2 "$csvfile" | awk -F',' '$4 ~ /^5/ {print $3}' | sort | uniq -c | sort -k1nr -k2 | head -2
 echo -e "\n===== 平均 latency_ms ====="
 tail -n +2 "$csvfile" | awk -F',' '{sum+=$5; count++} END {printf "%.2f\n", sum/count}'
+zwc@ZwcLinux:~/q02$ chmod +x analyze.sh
+zwc@ZwcLinux:~/q02$ ./analyze.sh access.csv
+===== 5xx请求最多的前2个path =====
+      3 /api/orders
+      2 /api/users
+
+===== 平均 latency_ms =====
+193.75
+zwc@ZwcLinux:~/q02$ ./analyze.sh notexist.csv
+错误：文件 notexist.csv 不存在
+zwc@ZwcLinux:~/q02$ echo $?
+1
+zwc@ZwcLinux:~/q02$ 
+

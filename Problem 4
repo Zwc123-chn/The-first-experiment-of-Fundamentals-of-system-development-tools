@@ -11,3 +11,130 @@ zwc@ZwcLinux:~$ cat > q04/report.tex << 'EOF'
 > \end{document}
 > EOF
 zwc@ZwcLinux:~$ nano q04/report.tex
+
+#以下是编辑内容----------------------------------------------------------------------------------------------------
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\title{Tool Report}
+\author{周文灿—25030021128}
+\maketitle
+\section{Result}
+
+一元二次方程求根公式如式~\eqref{eq:quadratic} 所示。
+\begin{equation}
+\label{eq:quadratic}
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+实验得到两组数据结果如表~\ref{tab:data}。
+\begin{table}[h!]
+\centering
+\caption{样本测量数据}
+\label{tab:data}
+\begin{tabular}{|c|c|}
+\hline
+A & B \\
+\hline
+22 & 11 \\
+\hline
+33 & 4.4\\
+\hline
+\end{tabular}
+\end{table}
+
+从表~\ref{tab:data} 可以看出两组数值差异明显，结合公式~\eqref{eq:quadratic} 完成后续计算分析。
+
+\end{document}
+--------------------------------------------------------------------------------------------------------------------------
+
+zwc@ZwcLinux:~$ latexmk -pdf -halt-on-error q04/report.tex
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'q04/report.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -halt-on-error -recorder  "q04/report.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./q04/report.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./report.aux)
+
+! LaTeX Error: Unicode character 姓 (U+59D3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \maketitle
+              
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on report.log.
+Latexmk: Examining 'report.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, so I did not complete making targets
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'report.log' for details
+Latexmk: Use the -f option to force complete processing,
+ unless error was exceeding maximum runs, or warnings treated as errors.
+zwc@ZwcLinux:~$ nano q04/report.tex
+
+#以下是编辑内容--------------------------------------------------------------------------------------------
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\title{Tool Report}
+\author{Zhouwencan—25030021128}
+\maketitle
+\section{Result}
+
+The quadratic formula for solving quadratic equations is shown in the ~\eqref{eq:quadratic}  equation.
+\begin{equation}
+\label{eq:quadratic}
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+The experiment yielded two sets of data results as shown in Table ~\ref{tab:data}.
+\begin{table}[h!]
+\centering
+\caption{data of sample}
+\label{tab:data}
+\begin{tabular}{|c|c|}
+\hline
+A & B \\
+\hline
+22 & 11 \\
+\hline
+33 & 4.4\\
+\hline
+\end{tabular}
+\end{table}
+
+As shown in Table ~\ref{tab:data} , the two sets of values differ significantly; subsequent calculations and analysis will be carried out using Formula ~\eqref{eq:quadratic} .
+
+\end{document}
+-----------------------------------------------------------------------------------------------------
+
+

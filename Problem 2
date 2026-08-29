@@ -12,3 +12,14 @@ zwc@ZwcLinux:~/q02$ cat > access.csv <<'EOF'
 09:00:08,carol,/api/users,500,150
 EOF
 zwc@ZwcLinux:~/q02$ nano analyze.sh
+#以下为脚本 analyze.sh编写内容
+#!/bin/bash
+csvfile="$1"
+if [ ! -f "$csvfile" ];then
+    echo "错误：文件 $csvfile 不存在" >&2
+    exit 1
+fi
+echo "===== 5xx请求最多的前2个path ====="
+tail -n +2 "$csvfile" | awk -F',' '$4 ~ /^5/ {print $3}' | sort | uniq -c | sort -k1nr -k2 | head -2
+echo -e "\n===== 平均 latency_ms ====="
+tail -n +2 "$csvfile" | awk -F',' '{sum+=$5; count++} END {printf "%.2f\n", sum/count}'

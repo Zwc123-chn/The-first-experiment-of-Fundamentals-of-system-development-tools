@@ -208,3 +208,15 @@ a1ceec9 (HEAD -> main) the second commit
 zwc@ZwcLinux:~/q00-fresh$ git show a1ceec9 :password.txt
 fatal: path 'password.txt' does not exist (neither on disk nor in the index)
 zwc@ZwcLinux:~/q00-fresh$ 
+
+
+#练习八------------------------------------------------------------------------------------------------------------------------
+zwc@ZwcLinux:~$ git config --global alias.graph 'log --all --graph --decorate --oneline'
+zwc@ZwcLinux:~$ cd q00
+zwc@ZwcLinux:~/q00$ git graph
+* ec15eb2 (HEAD -> main) the second commit
+* 1663e2b the first commit
+
+
+
+

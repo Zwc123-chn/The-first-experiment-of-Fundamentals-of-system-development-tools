@@ -1,6 +1,10 @@
 #练习一
+
 zwc@ZwcLinux:~$ echo $SHELL
 /bin/bash
+
+#练习二------------------------------------------------------------------------------------------------------------------------
+
 zwc@ZwcLinux:~$ ls -l /
 total 2744400
 lrwxrwxrwx   1 root root          7  8月 24 16:56 bin -> usr/bin
@@ -29,10 +33,16 @@ drwxrwxrwt  18 root root       4096  8月 30 14:08 tmp
 drwxr-xr-x  14 root root       4096  9月 11  2024 usr
 drwxr-xr-x  14 root root       4096  9月 11  2024 var
 zwc@ZwcLinux:~$ man ls
+
+#练习三------------------------------------------------------------------------------------------------------------------------
+
 zwc@ZwcLinux:~$ touch -- -myfile
 wc@ZwcLinux:~$ rm ./-myfile
+
+#练习四------------------------------------------------------------------------------------------------------------------------
+
 zwc@ZwcLinux:~$ nano marco.sh
-#以下是marco.sh代码------------------------------------------------------------------------------------------------------------------------------------
+#以下是marco.sh代码--------------------------------
 #!/bin/bash
 marco(){
     export MARCO_SAVE_DIR="$PWD"
@@ -40,10 +50,36 @@ marco(){
 polo(){
     cd "$MARCO_SAVE_DIR"
 }
-------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------
 zwc@ZwcLinux:~$ source marco.sh
 zwc@ZwcLinux:~$ marco
 zwc@ZwcLinux:~$ cd /etc
 zwc@ZwcLinux:/etc$ polo
 zwc@ZwcLinux:~$ 
+
+#练习五------------------------------------------------------------------------------------------------------------------------
+
+zwc@ZwcLinux:~$ mkdir q00
+zwc@ZwcLinux:~$ cd q00
+zwc@ZwcLinux:~/q00$ git init
+Initialized empty Git repository in /home/zwc/q00/.git/
+zwc@ZwcLinux:~/q00$ echo 'my_secret_password=123456' > password.txt
+zwc@ZwcLinux:~/q00$ git add password.txt
+zwc@ZwcLinux:~/q00$ git commit -m "the first commit"
+[main (root-commit) 5b0b4ab] the first commit
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 password.txt
+zwc@ZwcLinux:~/q00$ 
 

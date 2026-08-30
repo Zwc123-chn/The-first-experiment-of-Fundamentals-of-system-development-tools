@@ -31,4 +31,19 @@ drwxr-xr-x  14 root root       4096  9月 11  2024 var
 zwc@ZwcLinux:~$ man ls
 zwc@ZwcLinux:~$ touch -- -myfile
 wc@ZwcLinux:~$ rm ./-myfile
+zwc@ZwcLinux:~$ nano marco.sh
+#以下是marco.sh代码------------------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+marco(){
+    export MARCO_SAVE_DIR="$PWD"
+}
+polo(){
+    cd "$MARCO_SAVE_DIR"
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+zwc@ZwcLinux:~$ source marco.sh
+zwc@ZwcLinux:~$ marco
+zwc@ZwcLinux:~$ cd /etc
+zwc@ZwcLinux:/etc$ polo
+zwc@ZwcLinux:~$ 
 

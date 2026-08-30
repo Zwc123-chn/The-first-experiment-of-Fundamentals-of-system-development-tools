@@ -1,0 +1,3 @@
+#练习一
+zwc@ZwcLinux:~$ echo $SHELL
+/bin/bash

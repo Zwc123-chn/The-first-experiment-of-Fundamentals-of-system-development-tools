@@ -1,3 +1,31 @@
 #练习一
 zwc@ZwcLinux:~$ echo $SHELL
 /bin/bash
+zwc@ZwcLinux:~$ ls -l /
+total 2744400
+lrwxrwxrwx   1 root root          7  8月 24 16:56 bin -> usr/bin
+drwxr-xr-x   4 root root       4096  8月 26 11:19 boot
+drwxrwxr-x   2 root root       4096  8月 24 16:58 cdrom
+drwxr-xr-x  19 root root       4200  8月 30 13:57 dev
+drwxr-xr-x 134 root root      12288  8月 30 13:42 etc
+drwxr-xr-x   4 root root       4096  8月 25 14:28 home
+lrwxrwxrwx   1 root root          7  8月 24 16:56 lib -> usr/lib
+lrwxrwxrwx   1 root root          9  8月 24 16:56 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root          9  8月 24 16:56 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root         10  8月 24 16:56 libx32 -> usr/libx32
+drwx------   2 root root      16384  8月 24 16:56 lost+found
+drwxr-xr-x   5 root root       4096  8月 25 14:31 media
+drwxr-xr-x   2 root root       4096  9月 11  2024 mnt
+drwxr-xr-x   3 root root       4096  8月 24 22:45 opt
+dr-xr-xr-x 244 root root          0  8月 30 13:32 proc
+drwx------   4 root root       4096  8月 30 13:32 root
+drwxr-xr-x  33 root root        920  8月 30 13:57 run
+lrwxrwxrwx   1 root root          8  8月 24 16:56 sbin -> usr/sbin
+drwxr-xr-x  14 root root       4096  8月 30 13:43 snap
+drwxr-xr-x   2 root root       4096  9月 11  2024 srv
+-rw-------   1 root root 2810183680  8月 24 16:56 swapfile
+dr-xr-xr-x  13 root root          0  8月 30 13:32 sys
+drwxrwxrwt  18 root root       4096  8月 30 14:08 tmp
+drwxr-xr-x  14 root root       4096  9月 11  2024 usr
+drwxr-xr-x  14 root root       4096  9月 11  2024 var
+zwc@ZwcLinux:~$ man ls

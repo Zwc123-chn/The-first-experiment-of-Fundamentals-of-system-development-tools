@@ -211,12 +211,42 @@ zwc@ZwcLinux:~/q00-fresh$
 
 
 #练习八------------------------------------------------------------------------------------------------------------------------
+
 zwc@ZwcLinux:~$ git config --global alias.graph 'log --all --graph --decorate --oneline'
 zwc@ZwcLinux:~$ cd q00
 zwc@ZwcLinux:~/q00$ git graph
 * ec15eb2 (HEAD -> main) the second commit
 * 1663e2b the first commit
 
+#练习九------------------------------------------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage{booktabs} % 引入专业表格横线宏包
+\usepackage{multirow} % 必须引入 multirow 宏包才能使用 \multirow 命令
+
+\begin{document}
+
+\begin{tabular}{l|r|r}
+Item           & Quantity & Price(\$) \\
+\hline
+Nails          & 500      & 0.34      \\
+Wooden boards  & 100      & 4.00      \\
+Bricks         & 240      & 11.50    
+\end{tabular}
+\vspace{1em} 
 
 
+\begin{tabular}{l|rrr}
+\multirow{3}{*}{City} & \multicolumn{1}{c}{Year} \\
+\cline{2-4}
+                      & 2006 & 2007 & 2008 \\
+\cline{2-4}
+
+\hline
+London & 45789 & 46551 & 51298 \\
+Berlin & 34549 & 32543 & 29870 \\
+Paris & 49835 & 51009 & 51970 \\
+\end{tabular}
+
+\end{document}
 

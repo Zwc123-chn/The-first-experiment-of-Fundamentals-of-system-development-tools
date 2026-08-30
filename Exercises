@@ -29,3 +29,6 @@ drwxrwxrwt  18 root root       4096  8月 30 14:08 tmp
 drwxr-xr-x  14 root root       4096  9月 11  2024 usr
 drwxr-xr-x  14 root root       4096  9月 11  2024 var
 zwc@ZwcLinux:~$ man ls
+zwc@ZwcLinux:~$ touch -- -myfile
+wc@ZwcLinux:~$ rm ./-myfile
+

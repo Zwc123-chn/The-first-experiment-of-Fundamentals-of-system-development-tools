@@ -59,6 +59,36 @@ zwc@ZwcLinux:~$
 
 #练习五------------------------------------------------------------------------------------------------------------------------
 
+zwc@ZwcLinux:~$ brew install git-filter-repo
+Command 'brew' not found, did you mean:
+  command 'qbrew' from deb qbrew (0.4.1-8build1)
+  command 'brec' from deb bplay (0.991-10build1)
+Try: sudo apt install <deb name>
+zwc@ZwcLinux:~$ sudo apt install git-filter-repo
+[sudo] password for zwc: 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树... 完成
+正在读取状态信息... 完成                 
+下列软件包是自动安装的并且现在不需要了：
+  asymptote asymptote-doc cm-super cm-super-minimal context context-modules feynmf fonts-adf-accanthis fonts-adf-berenis fonts-adf-gillius fonts-adf-universalis fonts-cabin
+  fonts-cantarell fonts-comfortaa fonts-dejavu-extra fonts-ebgaramond fonts-ebgaramond-extra fonts-font-awesome fonts-gfs-artemisia fonts-gfs-baskerville fonts-gfs-bodoni-classic
+  fonts-gfs-complutum fonts-gfs-didot fonts-gfs-didot-classic fonts-gfs-gazis fonts-gfs-neohellenic fonts-gfs-olga fonts-gfs-porson fonts-gfs-solomos fonts-gfs-theokritos fonts-go
+  fonts-hosny-amiri fonts-junicode fonts-linuxlibertine fonts-lobster fonts-lobstertwo fonts-noto-core fonts-oflb-asana-math fonts-open-sans fonts-roboto-unhinted fonts-sil-charis
+  fonts-sil-gentium fonts-sil-gentium-basic fonts-sil-gentiumplus fonts-sil-gentiumplus-compact freeglut3 libglew2.2 libgsl27 libgslcblas0 libsigsegv2 pfb2t1c2pfb texlive-metapost
+使用'sudo apt autoremove'来卸载它(它们)。
+下列【新】软件包将被安装：
+  git-filter-repo
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 84 个软件包未被升级。
+需要下载 99.3 kB 的归档。
+解压缩后会消耗 329 kB 的额外空间。
+获取:1 http://mirrors.tuna.tsinghua.edu.cn/ubuntu jammy/universe amd64 git-filter-repo all 2.34.0-1 [99.3 kB]
+已下载 99.3 kB，耗时 1秒 (180 kB/s)  
+正在选中未选择的软件包 git-filter-repo。
+(正在读取数据库 ... 系统当前共安装有 291739 个文件和目录。)
+准备解压 .../git-filter-repo_2.34.0-1_all.deb  ...
+正在解压 git-filter-repo (2.34.0-1) ...
+正在设置 git-filter-repo (2.34.0-1) ...
+正在处理用于 man-db (2.10.2-1) 的触发器 ...
 zwc@ZwcLinux:~$ mkdir q00
 zwc@ZwcLinux:~$ cd q00
 zwc@ZwcLinux:~/q00$ git init
@@ -66,7 +96,7 @@ Initialized empty Git repository in /home/zwc/q00/.git/
 zwc@ZwcLinux:~/q00$ echo 'my_secret_password=123456' > password.txt
 zwc@ZwcLinux:~/q00$ git add password.txt
 zwc@ZwcLinux:~/q00$ git commit -m "the first commit"
-[main (root-commit) 5b0b4ab] the first commit
+[main (root-commit) 1663e2b] the first commit
  Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
 Your name and email address were configured automatically based
 on your username and hostname. Please check that they are accurate.
@@ -81,5 +111,47 @@ After doing this, you may fix the identity used for this commit with:
 
  1 file changed, 1 insertion(+)
  create mode 100644 password.txt
-zwc@ZwcLinux:~/q00$ 
+zwc@ZwcLinux:~/q00$ echo "readme" > readme.txt
+zwc@ZwcLinux:~/q00$ git add readme.txt
+zwc@ZwcLinux:~/q00$ git commit -m "the second commit"
+[main ec15eb2] the second commit
+ Committer: zwc <zwc@ZwcLinux.myguest.virtualbox.org>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
 
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+zwc@ZwcLinux:~/q00$ git filter-repo --path password.txt --invert-paths
+Aborting: Refusing to destructively overwrite repo history since
+this does not look like a fresh clone.
+  (expected at most one entry in the reflog for HEAD)
+Please operate on a fresh clone instead.  If you want to proceed
+anyway, use --force.
+zwc@ZwcLinux:~/q00$ cd ..
+zwc@ZwcLinux:~$ git clone q00 q00-fresh
+Cloning into 'q00-fresh'...
+done.
+zwc@ZwcLinux:~$ cd q00-fresh
+zwc@ZwcLinux:~/q00-fresh$ git filter-repo --path password.txt --invert-paths
+Parsed 2 commits
+New history written in 0.11 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+HEAD is now at a1ceec9 the second commit
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Completely finished after 0.20 seconds.
+zwc@ZwcLinux:~/q00-fresh$ git log --oneline
+a1ceec9 (HEAD -> main) the second commit
+zwc@ZwcLinux:~/q00-fresh$ git show a1ceec9 :password.txt
+fatal: path 'password.txt' does not exist (neither on disk nor in the index)
+zwc@ZwcLinux:~/q00-fresh$ 

@@ -209,6 +209,13 @@ zwc@ZwcLinux:~/q00-fresh$ git show a1ceec9 :password.txt
 fatal: path 'password.txt' does not exist (neither on disk nor in the index)
 zwc@ZwcLinux:~/q00-fresh$ 
 
+#练习七------------------------------------------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage{ctex}
+\begin{document}
+\textbf{这一行文字是粗体。}
+\end{document}
 
 #练习八------------------------------------------------------------------------------------------------------------------------
 
@@ -249,4 +256,24 @@ Paris & 49835 & 51009 & 51970 \\
 \end{tabular}
 
 \end{document}
+
+#练习十------------------------------------------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{align}
+e &\;= \;mc^2 \\
+\pi &\;= \;\frac{c}{d} \\
+\frac{d}{dx} e^{x} &\;=\; e^{x} \\
+\frac{d}{dx}\int_{0}^{\infty} f(s)\,ds &\;=\; f(x) \\
+f(x) &\;=\; \sum_{i}0^{\infty}\frac{f^{(i)}(0)}{i!} x^{i} \\
+x &\;=\; \sqrt{\frac{x_i}{z}\,y}
+\end{align}
+
+\end{document}
+
+
 
